@@ -1,48 +1,23 @@
 {
-    "name": "lazyjsonmapper/lazyjsonmapper",
+    "name": "herren/repman-test",
     "type": "library",
-    "description": "Advanced, intelligent & automatic object-oriented JSON containers for PHP.",
-    "keywords": ["json", "development"],
-    "homepage": "https://github.com/SteveJobzniak/LazyJsonMapper",
-    "license": "Apache-2.0",
-    "authors": [
-        {
-            "name": "SteveJobzniak",
-            "homepage": "https://github.com/SteveJobzniak",
-            "role": "Developer"
-        }
-    ],
     "require": {
-        "php": ">=7.4",
-        "corneltek/getoptionkit": "2.*"
+        "php": "^8.0",
+        "monolog/monolog": "*",
+        "maxbanton/cwh": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "6.*",
-        "friendsofphp/php-cs-fixer": "^2.7.1"
     },
-    "bin": [
-        "bin/lazydoctor"
-    ],
+    "config": {
+        "optimize-autoloader": true,
+        "classmap-authoritative": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
     "autoload": {
         "psr-4": {
-            "LazyJsonMapper\\": "src/"
+            "": "src/"
         }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "LazyJsonMapper\\Tests\\": "tests/"
-        }
-    },
-    "scripts": {
-        "codestyle": [
-            "php-cs-fixer fix --config=.php_cs.dist --allow-risky yes",
-            "php devtools/checkStyle.php x"
-        ],
-        "generatedocs": [
-            "rm -rf docs/output/ && phpdoc"
-        ],
-        "generatefreshdocs": [
-            "rm -rf docs/ && phpdoc"
-        ]
     }
 }
